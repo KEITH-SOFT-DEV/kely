@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          /*id a reference to access the value for each function*/ 
+          /*onclick is an attribute that enables your code to perform the function assigned to it.*/
+        </style>
+    </head>
+
+    <body>
+         
+      <p>CALCULATOR</p>
+      
+            <table border="1">
+                <tr><th>KEITH</th></tr>
+                <tr>
+                    
+                    <td colspan="4"><input type="text" id="kely"></td>
+                </tr>
+             <tr>
+                <td><input type="button"  value="on/off" onclick="clr()"></td>
+                <td><input type="button"  value="pow" onclick="display()"></td>
+                <td><input type="button"  value="!"  onclick="display()"></td>
+                <td><input type="button"  value="/"  onclick="display('/')"></td>            
+            </tr>
+
+            <tr>
+                <td><input type="button" value="9"  onclick="display('9')" ></td>
+                <td><input type="button"  value="8"  onclick="display('8')"></td>
+                <td><input type="button" value="7"  onclick="display('7')"></td>
+                <td><input type="button" value="+"  onclick="display('+')"></td>            
+            </tr>
+
+            <tr>
+                <td><input type="button" value="6"  onclick="display('6')"></td>
+                <td><input type="button"  value="5" onclick="display('5')"></td>
+                <td><input type="button" value="4"  onclick="display('4')"></td>
+                <td><input type="button" value="-"  onclick="display('-')"></td>            
+            </tr>
+
+            <tr>
+                <td><input type="button" value="3"  onclick="display(3)"></td>
+                <td><input type="button"  value="2"  onclick="display(2)"></td>
+                <td><input type="button" value="1"  onclick="display('1')"></td>
+                <td><input type="button" value="*"  onclick="display('*')"></td>            
+            </tr>
+            <tr>
+               
+                <td><input type="button"  value="0"  onclick="display('0')"></td>
+                <td><input type="button"  value="."  onclick="display('.')"></td>
+                <td><input type="button" value="%"   onclick="solve()"></td>
+                <td><input type="button" value="&radic;"  onclick="sqrt()"></td>        
+            </tr>
+            <tr> 
+                <td  colspan="4" align="center"><input type="button" value="="   onclick="solve()"></td>
+            </tr>
+           
+            </table>
+    </body>
+      <script>
+          //Defination of functions that will be perform through out the code.
+            function clr(){
+                document.getElementById("kely").value=""; 
+            }
+            function display(value){
+                document.getElementById("kely").value+=value;
+            }
+            function solve(){
+                var x=document.getElementById("kely").value;
+                var y=eval(x);
+                document.getElementById("kely").value=y;
+            }
+         /*function fact()
+            { 
+                var n=document.getElementById("kely").value;
+                n= w*fact(w-1);
+                var w=eval(n);
+                document.getElementById("kely").value=w;
+
+
+            }*/
+               
+           function pow(base,exponent){
+               var z=1;
+               if (exponent==undefined)
+               exponent=2;
+               for(var i=1;i<=exponent;i++){
+                    z=z*base;
+               }
+                
+                
+                var z=document.getElementById("kely").value;
+            }
+            /*function Modulus(){
+            r m=document.getElementById("kely").value;
+            }*/
+            function sqrt(){
+                var x =document.getElementById("kely").value;
+                const result= Math.sqrt(x);
+                document.getElementById("kely").value=result;
+                
+                
+               // var s=document.getElementById("kely").value=result;
+                
+            }
+      </script> 
+</html>
